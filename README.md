@@ -9,3 +9,6 @@
   -e TZ=Canada/Eastern \\<br/> 
   -p 80:80 \\<br/>
   phpbbimage
+
+Note: To update local files:
+# git pull https://github.com/cwldev/docker-phpbb.git
