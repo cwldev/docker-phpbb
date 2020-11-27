@@ -22,8 +22,8 @@ RUN chown -R www-data:www-data /var/www/html/src/phpBB/store
 RUN chown -R www-data:www-data /var/www/html/src/phpBB/cache
 RUN touch config.php
 RUN chown www-data:www-data /var/www/html/src/phpBB/config.php
-mkdir /var/phpbbdata
-chown -R www-data:www-data /var/phpbbdata
+RUN mkdir /var/phpbbdata
+RUN chown -R www-data:www-data /var/phpbbdata
 
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
