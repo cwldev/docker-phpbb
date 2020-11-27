@@ -20,10 +20,13 @@ RUN chown -R www-data:www-data /var/www/html/src/phpBB
 #create config.php file
 RUN touch config.php
 RUN chown www-data:www-data /var/www/html/src/phpBB/config.php
+RUN echo "core.disable_super_globals: false" >> /var/www/html/src/phpBB/config/parameters.yml
 RUN mkdir /var/phpbbdata
 RUN chown -R www-data:www-data /var/phpbbdata
 RUN chmod -R 755 /var/www/html/src/phpBB
 RUN chmod -R 755 /var/phpbbdata
+
+
 RUN php ../composer.phar install
 
 EXPOSE 80
