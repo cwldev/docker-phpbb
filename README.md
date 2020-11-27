@@ -1,6 +1,14 @@
 # phpBB in Docker
 This is a docker implementation of popular forum software phpBB. This is currently based on version 3.3.2.
 
+# Simply running it
+docker run -d \\<br/> 
+  --name=phpBB \\<br/> 
+  -e TZ=Canada/Eastern \\<br/> 
+  -p 80:80 \\<br/>
+  cwldev/phpbb
+
+# Building on your own
 1. mkdir /phpbb
 2. cd /phpbb
 3. git clone https://github.com/cwldev/docker-phpbb.git .
