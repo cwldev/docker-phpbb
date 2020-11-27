@@ -17,7 +17,13 @@ RUN git clone https://github.com/phpbb/phpbb.git ./src
 COPY src/phpBB /var/www/
 WORKDIR /var/www/html/src/phpBB
 RUN php ../composer.phar install
-# RUN chown -R www-data:www-data /var/www
+RUN chown -R www-data:www-data /var/www/html/src/phpBB/cache
+RUN chown -R www-data:www-data /var/www/html/src/phpBB/store
+RUN chown -R www-data:www-data /var/www/html/src/phpBB/cache
+RUN touch config.php
+RUN chown www-data:www-data /var/www/html/src/phpBB/config.php
+mkdir /var/phpbbdata
+chown -R www-data:www-data /var/phpbbdata
 
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
