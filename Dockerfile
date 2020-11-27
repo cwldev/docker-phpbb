@@ -15,6 +15,8 @@ RUN a2enmod rewrite
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN git clone https://github.com/phpbb/phpbb.git ./src
 COPY src/phpBB /var/www/
+WORKDIR /var/www/html/src/phpBB
+RUN php ../composer.phar install
 # RUN chown -R www-data:www-data /var/www
 
 EXPOSE 80
