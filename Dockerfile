@@ -16,14 +16,15 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN git clone https://github.com/phpbb/phpbb.git ./src
 COPY src/phpBB /var/www/
 WORKDIR /var/www/html/src/phpBB
-RUN php ../composer.phar install
-RUN chown -R www-data:www-data /var/www/html/src/phpBB/cache
-RUN chown -R www-data:www-data /var/www/html/src/phpBB/store
-RUN chown -R www-data:www-data /var/www/html/src/phpBB/cache
+RUN chown -R www-data:www-data /var/www/html/src/phpBB
+#create config.php file
 RUN touch config.php
 RUN chown www-data:www-data /var/www/html/src/phpBB/config.php
 RUN mkdir /var/phpbbdata
 RUN chown -R www-data:www-data /var/phpbbdata
+RUN chmod -R 755 /var/www/html/src/phpBB
+RUN chmod -R 755 /var/phpbbdata
+RUN php ../composer.phar install
 
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
