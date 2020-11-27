@@ -1,5 +1,5 @@
 # phpBB in Docker
-This is a docker implementation of popular forum software phpBB. This is currently based on version 3.3.2.
+This is a docker implementation of popular forum software [phpBB](https://www.phpbb.com/). This is currently based on version 3.3.2.
 
 The image presumes you will use an sqLite database - if so, used the full path for your database file /var/phpbbdata/dbfile
 If using any other database system, it's possible, but you'll have to connect to it.
