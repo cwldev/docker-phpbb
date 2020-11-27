@@ -11,7 +11,8 @@ RUN apt-get clean
 RUN a2enmod rewrite
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
-# COPY src /var/www/
+RUN git clone https://github.com/phpbb/phpbb.git ./src
+COPY src/phpBB /var/www/
 # RUN chown -R www-data:www-data /var/www
 
 EXPOSE 80
