@@ -1,4 +1,5 @@
-# docker-phpbb
+# phpBB in Docker
+This is a docker implementation of popular forum software phpBB. This is currently based on version 3.3.2.
 
 1. mkdir /phpbb
 2. cd /phpbb
