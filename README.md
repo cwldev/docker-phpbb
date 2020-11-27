@@ -11,4 +11,4 @@
   phpbbimage
 
 Note: To update local files:
-# git pull https://github.com/cwldev/docker-phpbb.git
+git pull https://github.com/cwldev/docker-phpbb.git
