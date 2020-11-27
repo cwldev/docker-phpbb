@@ -9,6 +9,9 @@
   -e TZ=Canada/Eastern \\<br/> 
   -p 80:80 \\<br/>
   phpbbimage
+  
+The image presumes you will use an sqLite database - if so, used the full path for your database file /var/phpbbdata/database
+If using any other database system, it's possible, but you'll have to connect to it.
 
 Note: To update local files:
 git pull https://github.com/cwldev/docker-phpbb.git
