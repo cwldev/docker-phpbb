@@ -19,8 +19,8 @@ docker run -d \\<br/>
   --name=phpBB \\<br/> 
   -e TZ=Canada/Eastern \\<br/> 
   -p 80:80 \\<br/>
-  --network=networkname \
-  --ip 10.0.0.1 \
+  --network=networkname \\<br/>
+  --ip 10.0.0.1 \\<br/>
   cwldev/phpbb
   
 To see a video of this in action: http://g.ecwl.cc/bOs0s
