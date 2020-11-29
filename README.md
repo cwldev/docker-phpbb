@@ -13,6 +13,15 @@ docker run -d \\<br/>
   -e TZ=Canada/Eastern \\<br/> 
   -p 80:80 \\<br/>
   cwldev/phpbb
+
+## Add the container to a network (with a static IP)
+docker run -d \\<br/> 
+  --name=phpBB \\<br/> 
+  -e TZ=Canada/Eastern \\<br/> 
+  -p 80:80 \\<br/>
+  --network=networkname \
+  --ip 10.0.0.1 \
+  cwldev/phpbb
   
 To see a video of this in action: http://g.ecwl.cc/bOs0s
 
