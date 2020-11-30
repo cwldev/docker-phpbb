@@ -36,6 +36,6 @@ VOLUME /var/phpbbdata
 
 EXPOSE 80
 #CMD ["apache2ctl", "-D", "FOREGROUND"]
-CMD ["start.sh"] 
+CMD ["/usr/local/bin/start.sh"] 
 
 # docker build . -t test
