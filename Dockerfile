@@ -3,7 +3,7 @@ LABEL maintainer="kevin@cwl.cc"
 ENV TZ America/Los_Angeles
 ENV PHPBB_VER 3.3.0
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get update \
     && apt-get install -y apache2  apache2-utils git nano wget bsdtar \
     && apt-get clean \
