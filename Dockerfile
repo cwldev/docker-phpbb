@@ -2,15 +2,9 @@ FROM php:7-apache
 ENV TZ America/Los_Angeles
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN apt-get update 
-RUN apt-get install -y apache2 
-RUN apt-get install -y apache2-utils
-RUN apt-get install -y git 
-RUN apt-get install -y nano
-RUN apt-get install -y wget
-RUN apt-get install -y bsdtar
-# RUN apt-get install -y php7.0 php7.0-cli libapache2-mod-php7.0
-RUN apt-get clean 
+RUN apt-get update \
+    && apt-get install -y apache2  apache2-utils git nano wget bsdtar \
+    && apt-get clean 
 
 RUN a2enmod rewrite
 
