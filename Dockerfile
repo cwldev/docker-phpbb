@@ -9,6 +9,7 @@ RUN apt-get update \
 RUN a2enmod rewrite
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY start.sh /usr/local/bin/
 
 WORKDIR /var/www/html
 RUN wget https://download.phpbb.com/pub/release/3.3/3.3.2/phpBB-3.3.2.zip
