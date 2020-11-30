@@ -15,4 +15,4 @@ chown -R www-data:www-data /var/phpbbdata
 chmod -R 755 /var/www/html/
 chmod -R 755 /var/phpbbdata
 
-exec httpd -DFOREGROUND "$@"
+exec apache2ctl -D FOREGROUND
