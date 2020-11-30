@@ -34,7 +34,7 @@ VOLUME /var/www/html
 VOLUME /var/phpbbdata
 
 EXPOSE 80
-CMD ["apache2ctl", "-D", "FOREGROUND"]
-
+#CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["start.sh"] 
 
 # docker build . -t test
