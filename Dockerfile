@@ -10,6 +10,9 @@ RUN a2enmod rewrite
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
+VOLUME /var/www/html
+VOLUME /var/phpbbdata
+
 WORKDIR /var/www/html
 RUN wget https://download.phpbb.com/pub/release/3.3/3.3.2/phpBB-3.3.2.zip
 RUN bsdtar --strip-components=1 -xvf phpBB-3.3.2.zip
