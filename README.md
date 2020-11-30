@@ -7,6 +7,8 @@ If using any other database system, it's possible, but you'll have to connect to
 After the install wizard is finished, you'll want to remove the install directory. Do this from your docker host:<br/>
 docker exec -it phpBB rm -r /var/www/html/install
 
+Note: if you happen to be on n earlier version of this container (DIGEST:sha256:af69751ac4757f27a5469f7bcb76020eecda89d3341e91564aff4a2a6b48f239), where volumes were not involved, be sure to copy out internal container data before updating and return it to the volume.
+
 ## Simply running it
 docker run -d \\<br/> 
   --name=phpBB \\<br/> 
@@ -21,6 +23,8 @@ docker run -d \\<br/>
   --name=phpBB \\<br/> 
   -e TZ=Canada/Eastern \\<br/> 
   -p 80:80 \\<br/>
+  -v /data/phpbb/html:/var/www/html \\<br/>
+  -v /data/phpbb/data:/var/phpbbdata \\<br/>
   --network=networkname \\<br/>
   --ip 10.0.0.1 \\<br/>
   cwldev/phpbb
