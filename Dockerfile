@@ -10,9 +10,6 @@ RUN a2enmod rewrite
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
-VOLUME /var/www/html
-VOLUME /var/phpbbdata
-
 WORKDIR /var/www/html
 RUN wget https://download.phpbb.com/pub/release/3.3/3.3.2/phpBB-3.3.2.zip
 RUN bsdtar --strip-components=1 -xvf phpBB-3.3.2.zip
@@ -31,6 +28,9 @@ RUN chmod -R 755 /var/phpbbdata
 #COPY src/phpBB /var/www/
 #WORKDIR /var/www/html/src/phpBB
 
+
+VOLUME /var/www/html
+VOLUME /var/phpbbdata
 
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
