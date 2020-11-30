@@ -29,7 +29,21 @@ docker create \\<br/>
   cwldev/phpbb
   
 ## With docker-compose
-
+```
+version: '2' 
+services:  
+    phpbb:
+        container_name: phpBB
+        environment:
+            - TZ=Canada/Eastern
+        ports:
+            - '80:80'
+        volumes:
+            - '/data/phpbb/html:/var/www/html'
+            - '/data/phpbb/data:/var/phpbbdata'
+        image: cwldev/phpbb
+```        
+        
 ## Add the container to a network (with a static IP)
 docker run -d \\<br/> 
   --name=phpBB \\<br/> 
