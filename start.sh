@@ -11,7 +11,9 @@ cd phpBB3
 if test -f "/var/www/html/config.php"; then
     rm config.php
 fi
-mv  -v * /var/www/html
+
+#mv  -v * /var/www/html
+cp -r * /var/www/html && rm -R *
 
 cd /var/www/html
 chown -R www-data:www-data /var/www/html/
