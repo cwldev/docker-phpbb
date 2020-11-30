@@ -12,6 +12,8 @@ docker run -d \\<br/>
   --name=phpBB \\<br/> 
   -e TZ=Canada/Eastern \\<br/> 
   -p 80:80 \\<br/>
+  -v /data/phpbb/html:/var/www/html \\<br/>
+  -v /data/phpbb/data:/var/phpbbdata \\<br/>
   cwldev/phpbb
 
 ## Add the container to a network (with a static IP)
